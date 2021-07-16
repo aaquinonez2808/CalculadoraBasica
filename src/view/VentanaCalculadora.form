@@ -57,16 +57,6 @@
                           <Component id="text_num2" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="67" pref="67" max="-2" attributes="0"/>
-                          <Component id="btn_suma" min="-2" pref="50" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="btn_resta" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="btn_prod" min="-2" pref="49" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_div" min="-2" pref="53" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                           <Component id="label_operacion" min="-2" pref="280" max="-2" attributes="0"/>
                       </Group>
@@ -82,8 +72,20 @@
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Component id="btn_salir" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="67" pref="67" max="-2" attributes="0"/>
+                          <Component id="btn_suma" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Component id="btn_resta" min="-2" pref="53" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="btn_prod" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btn_div" min="-2" pref="53" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btn_prod2" min="-2" pref="61" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -108,6 +110,7 @@
                       <Component id="btn_prod" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="btn_resta" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="btn_suma" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="btn_prod2" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
                   <Component id="label_operacion" min="-2" pref="30" max="-2" attributes="0"/>
@@ -231,6 +234,17 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_prod2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="*2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_prod2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

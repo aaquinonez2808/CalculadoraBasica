@@ -28,6 +28,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         label_operacion = new javax.swing.JLabel();
         btn_limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
+        btn_prod2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,6 +94,14 @@ public class VentanaCalculadora extends javax.swing.JFrame {
             }
         });
 
+        btn_prod2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btn_prod2.setText("*2");
+        btn_prod2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_prod2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -113,15 +122,6 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addComponent(text_num2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(btn_suma, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
-                        .addComponent(btn_resta, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(btn_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_div, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(label_operacion, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -133,8 +133,19 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                         .addGap(90, 90, 90)
                         .addComponent(btn_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
-                        .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43))
+                        .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(btn_suma, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(btn_resta, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btn_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_div, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_prod2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +165,8 @@ public class VentanaCalculadora extends javax.swing.JFrame {
                     .addComponent(btn_div, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_prod, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_resta, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_suma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_suma, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_prod2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addComponent(label_operacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
@@ -229,6 +241,16 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
 
+    private void btn_prod2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prod2ActionPerformed
+        if(!text_num1.getText().isEmpty() && !text_num2.getText().isEmpty()){
+            Calculadora operacion = new Calculadora(Float.parseFloat(text_num1.getText()), Float.parseFloat(text_num2.getText()), "Multiplicacion *2");
+            label_operacion.setText("Tipo de Operacion: Multiplicacion por 2");
+            txt_result.setText(Float.toString(operacion.Operacion()));
+        }else{
+            JOptionPane.showMessageDialog(null, "LLene Correctamente los campos");
+        }
+    }//GEN-LAST:event_btn_prod2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,6 +290,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton btn_div;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JButton btn_prod;
+    private javax.swing.JButton btn_prod2;
     private javax.swing.JButton btn_resta;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_suma;
