@@ -54,9 +54,11 @@ public class Calculadora {
              resultado = getNum1()-getNum2();
         }else if(getOperacion().equals("Multiplicacion")){
              resultado = getNum1()*getNum2();
-        }else{
+        }else if(getOperacion().equals("Division")){
              resultado = getNum1()/getNum2();
-        }
+        }else{
+                resultado = getNum1()*2;
+                }
         return resultado;
     }
     
